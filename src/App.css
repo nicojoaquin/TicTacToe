@@ -1,0 +1,29 @@
+table td {
+  width: 100px;
+  height: 100px;
+  border: 1px solid grey;
+}
+
+.turno article {
+  padding: 5rem;
+  width: 100px;
+  height: 100px;
+  font-size: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: rgb(44, 40, 40);
+  transition: 0.3s ease;
+}
+.turno article:hover {
+  filter: brightness(70%);
+}
+
+.turno article:nth-child(1) {
+  color: blue;
+}
+
+.turno article:nth-child(2) {
+  color: red;
+}
