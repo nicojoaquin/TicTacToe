@@ -17,7 +17,7 @@ const Game = ({
       ganador === "X" ? setGanadorNombre(jugador1) : setGanadorNombre(jugador2);
       ganador === "Empate" && setGanadorNombre("Empate");
     }
-  }, [ganador]);
+  }, [ganador, jugador1, jugador2]);
 
   const checkGanador = () => {
     const lineaGanadora = {
@@ -38,7 +38,7 @@ const Game = ({
     };
 
     for (let linea in lineaGanadora) {
-      lineaGanadora[linea].map((patron) => {
+      lineaGanadora[linea].forEach((patron) => {
         if (
           celdas[patron[0]] === "" ||
           celdas[patron[1]] === "" ||
@@ -97,7 +97,11 @@ const Game = ({
       <div className="text-light">
         {ganador && (
           <div className="text-center">
-            <h2>El ganador es: {ganadorNombre}</h2>
+            <h2>
+              {ganador === "Empate"
+                ? `${ganadorNombre}`
+                : `El ganador es ${ganadorNombre}`}
+            </h2>
             <button className="btn btn-light mb-3 mt-3" onClick={resetearJuego}>
               Jugar de nuevo
             </button>
